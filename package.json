@@ -1,0 +1,17 @@
+{
+  "name": "mid-apis",
+  "version": "1.0.0",
+  "keywords": [
+    "发布订阅",
+    "midApis",
+    "save",
+    "describe"
+  ],
+  "description": "Apis的中间层，接收数据并上传给服务器",
+  "main": "index.js",
+  "repository": "git@github.com:AiWeiEr324/midApis.git",
+  "homepage": "https://github.com/AiWeiEr324/midApis",
+  "bugs": "https://github.com/AiWeiEr324/midApis/issues",
+  "author": "senmu <951967917@qq.com>",
+  "license": "MIT"
+}
