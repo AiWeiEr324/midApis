@@ -1,9 +1,18 @@
+import EventBus from './helpers/EventBus'
 class MidApis {
+  _opt: {
+    level: string
+    tags: Record<string, any>
+  }
+  eventBus: EventBus
   constructor() {
-
   }
   init() {
-
+    this._opt = {
+      level: 'wran',
+      tags: {}
+    }
+    this.eventBus = new EventBus()
   }
   addError(message: string, opt: Options) {
     /** 
@@ -13,6 +22,10 @@ class MidApis {
      *  1.2 封装缓存池
      * 2. 上传到对应服务器
      **/
+    if (!message) {
+      throw new Error('message is not defined')
+    }
+    this._opt = opt
   }
   addUserInfo() {
 
