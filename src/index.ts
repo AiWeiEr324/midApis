@@ -1,10 +1,10 @@
 import EventBus from './helpers/EventBus'
-class MidApis {
-  _opt: {
+export default class MidApis {
+  _opt!: {
     level: string
     tags: Record<string, any>
   }
-  eventBus: EventBus
+  eventBus!: EventBus
   constructor() {
   }
   init() {
