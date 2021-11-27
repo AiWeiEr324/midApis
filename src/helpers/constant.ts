@@ -1,0 +1,10 @@
+export const MAX_SIZE = 100
+export const CACHE_TIME = 60
+export const REPORT_SIZE = 20
+export const ERROR = 'error'
+export const WARN = 'warn'
+export const INFO = 'info'
+export const DEBUG = 'debug'
+export const JS_ERROR = 'jsError'
+export const SOURCE_ERROR = 'sourceError'
+export const AJAX_ERROR = 'ajaxError'

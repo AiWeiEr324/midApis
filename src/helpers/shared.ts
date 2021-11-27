@@ -14,3 +14,9 @@ export const getGlobalThis = (): any => {
         : {})
   )
 }
+
+export const isBrowser = (): boolean => {
+  return typeof window !== 'undefined'
+}
+
+export const isArray = Array.isArray

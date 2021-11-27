@@ -1,3 +1,4 @@
+import { ICallback } from '../interface'
 class EventBus {
   handlers: Record<string, any>
   constructor() {
@@ -16,16 +17,16 @@ class EventBus {
       handlers.splice(index, 1)
     }
   }
-  trigger(eventName: string, ...args) {
+  trigger(eventName: string, ...args: any[]) {
     if (this.handlers[eventName]) {
       const handlers = this.handlers[eventName].slice()
-      handlers.forEach(handler => {
+      handlers.forEach((handler: ICallback) => {
         handler(...args)
       })
     }
   }
   once(eventName: string, handler: Function) {
-    const wrapper = (...args) => {
+    const wrapper = (...args: any[]) => {
       handler(...args)
       this.off(eventName, wrapper)
     }
