@@ -1,6 +1,6 @@
 {
   "name": "mid-apis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "发布订阅",
     "midApis",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "release": "bash ./scripts/release.sh",
+    "release": "node ./scripts/release",
     "lint": "eslint --ext src/**.ts",
     "changelog": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s"
   },

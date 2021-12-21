@@ -1,4 +1,4 @@
-/* MidApis version ' + 1.0.0 */
+/* MidApis version ' + 1.0.1 */
 const isBrowser = () => {
     return typeof window !== 'undefined';
 };
