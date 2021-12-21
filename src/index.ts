@@ -20,10 +20,15 @@ export default class MidApis {
     if (isArray(data) && data.length > 0) {
       this.reporter(data)
     }
-    
+    this.isTimeOut()
+    this.isMaxCache()
   }
   debug(mode: string) {
     // 开发模式可以在控制台看到上报的数据
+    if (mode === 'dev') {
+      return this.storage.get()
+    }
+    throw new Error('this mode is not dev')
   }
   addError(message: string, opt: IReporter, immediate: boolean = false) {
     /** 

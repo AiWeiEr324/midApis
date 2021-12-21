@@ -1,6 +1,6 @@
 {
   "name": "mid-apis",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "keywords": [
     "发布订阅",
     "midApis",
@@ -8,21 +8,34 @@
     "describe"
   ],
   "description": "Apis的中间层，接收数据并上传给服务器",
-  "main": "index.js",
+  "main": "dist/midApis.js",
+  "module": "dist/midApis.esm.js",
   "repository": "git@github.com:AiWeiEr324/midApis.git",
   "homepage": "https://github.com/AiWeiEr324/midApis",
   "bugs": "https://github.com/AiWeiEr324/midApis/issues",
   "author": "senmu <951967917@qq.com>",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/types",
   "scripts": {
-    "lint": "eslint --ext src/**.ts"
+    "build": "rollup -c",
+    "release": "node ./scripts/release",
+    "lint": "eslint --ext src/**.ts",
+    "changelog": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^16.11.10",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "conventional-changelog-cli": "^2.1.1",
     "eslint": "^8.3.0",
+    "rollup": "^2.61.1",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.31.1",
     "typescript": "^4.4.4"
   }
 }
