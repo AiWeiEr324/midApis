@@ -25,5 +25,5 @@ then
   # publish
   git push origin refs/tags/v$VERSION
   git push
-  yarn publish
+  npm publish
 fi
