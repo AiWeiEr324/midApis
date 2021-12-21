@@ -10,13 +10,13 @@ then
   echo "Releasing v$VERSION ..."
 
   # commit
-  VERSION=$VERSION yarn run build
+  VERSION=$VERSION npm run build
   git add dist
   git commit -m "build: bundle $VERSION"
   npm version $VERSION --message "chore(release): %s"
 
   # changelog
-  yarn run changelog
+  npm run changelog
   echo "Please check the git history and the changelog and press enter"
   read OKAY
   git add CHANGELOG.md
