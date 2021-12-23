@@ -17,13 +17,13 @@ abstract class StorageItem {
   }
   protected getItem(key: ICacheKey) {
     if (key) {
-      return this._this ? this._this.getItem(key) : this.data[key]
+      return this._this ? JSON.parse(this._this.getItem(key)) : this.data[key]
     } else {
       return this.data
     }
   }
   protected setItem(key: string, value: IData) {
-    this._this ? this._this.setItem(key, value) : this.data[key] = value
+    this._this ? this._this.setItem(key, JSON.stringify(value)) : this.data[key] = value
   }
   protected removeItem(key: string) {
     this._this ? this._this.removeItem(key) : delete this.data[key]

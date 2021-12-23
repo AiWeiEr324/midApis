@@ -1,4 +1,4 @@
-/* MidApis version ' + 1.0.2 */
+/* MidApis version ' + 1.0.3 */
 'use strict';
 
 const isBrowser = () => {
@@ -19,14 +19,14 @@ class StorageItem {
     }
     getItem(key) {
         if (key) {
-            return this._this ? this._this.getItem(key) : this.data[key];
+            return this._this ? JSON.parse(this._this.getItem(key)) : this.data[key];
         }
         else {
             return this.data;
         }
     }
     setItem(key, value) {
-        this._this ? this._this.setItem(key, value) : this.data[key] = value;
+        this._this ? this._this.setItem(key, JSON.stringify(value)) : this.data[key] = value;
     }
     removeItem(key) {
         this._this ? this._this.removeItem(key) : delete this.data[key];
